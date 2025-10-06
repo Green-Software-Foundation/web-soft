@@ -1,0 +1,66 @@
+---
+import { Card } from "@/components/ui/card";
+import CsuiteIcon from "@/assets/icons/csuite-icon.svg";
+import PractitionersIcon from "@/assets/icons/practitioners-icon.svg";
+import SustainabilityIcon from "@/assets/icons/sustainability-icon.svg";
+
+const blogPosts = [
+  {
+    image: {
+      src: "/assets/blog-1.svg",
+    },
+    icon: CsuiteIcon,
+    title: "C-Suite & Business Leaders",
+    description: `Transform your sustainability commitments into measurable results. SOFT provides board-ready
+governance structures, clear KPIs, and demonstrable ROI through cost savings and risk mitigation.  <br/><br/> Enhance your corporate reputation while achieving real environmental impact with a framework designed for executive decision-making and strategic alignment.`,
+  },
+  {
+    image: {
+      src: "/assets/blog-2.svg",
+    },
+    icon: PractitionersIcon,
+    title: "Software Practitioners",
+    description: `Make sustainability part of your development DNA without sacrificing performance or productivity. SOFT seamlessly integrates into existing workflows with practical tools, templates, and decision trees that make building greener software straightforward. <br/><br/> Elevate your skills, reduce technical debt, and contribute to meaningful environmental change through your daily work.`,
+  },
+  {
+    image: {
+      src: "/assets/blog-3.svg",
+    },
+    icon: SustainabilityIcon,
+    title: "Sustainability Professionals",
+    description: `Finally, bridge the gap between environmental goals and technical reality. SOFT translates your sustainability objectives into actionable IT practices with measurable outcomes and compliance alignment. <br/><br/> Transform technology from a carbon challenge into your greatest opportunity for impact with comprehensive frameworks that speak both business and sustainability languages.`,
+  },
+];
+---
+
+<section class="relative py-12 md:py-18 lg:py-20">
+  <div class="container">
+    <h2 class="mb-6 text-center text-2xl font-semibold md:mb-8 md:text-3xl lg:text-4xl">
+      <span class="font-bold text-primary">SOFT</span>
+      <span class="text-primary-darker">Works for Everyone</span>
+    </h2>
+
+    <div class="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3 lg:gap-4">
+      {
+        blogPosts.map((post) => (
+          <Card className="flex size-full flex-col items-center justify-start px-2 pt-2 pb-4">
+            <div>
+              <div class="mb-3 overflow-hidden md:mb-4">
+                <img src={post.image.src} class="aspect-[3/2] size-full rounded-md object-cover" />
+              </div>
+              <div class="px-4">
+                <div class="mb-2 flex flex-row items-center justify-start gap-2">
+                  <post.icon class="h-6 w-6 flex-shrink-0" />
+                  <h2 class="text-xl font-bold text-primary">{post.title}</h2>
+                </div>
+                <p set:html={post.description} />
+              </div>
+            </div>
+          </Card>
+        ))
+      }
+    </div>
+  </div>
+  <img class="absolute top-0 right-0 -z-50" src="/assets/join-decor.svg" />
+
+</section>

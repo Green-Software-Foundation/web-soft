@@ -1,0 +1,131 @@
+---
+import AchieveIcon from "@/assets/icons/achieve.svg";
+import DriveIcon from "@/assets/icons/drive.svg";
+import GainIcon from "@/assets/icons/gain.svg";
+import MitigateIcon from "@/assets/icons/mitigate.svg";
+import CatalyzeIcon from "@/assets/icons/catalyze.svg";
+import WhySoftBackgroundIcon from "@/assets/icons/why-soft-background-icon.svg";
+
+const whySoftFeatures = [
+  {
+    icon: AchieveIcon,
+    description:
+      "Achieve significant cost savings through reduced energy consumption and resilience to energy price volatility",
+  },
+  {
+    icon: DriveIcon,
+    description:
+      "Drive operational excellence with standardized practices that reduce technical debt and boost developer productivity",
+  },
+  {
+    icon: GainIcon,
+    description:
+      "Gain competitive advantage as a recognized sustainability leader, attracting top talent and environmentally conscious clients",
+  },
+  {
+    icon: MitigateIcon,
+    description:
+      "Mitigate risk through proactive compliance management and structured approaches to regulatory changes",
+  },
+  {
+    icon: CatalyzeIcon,
+    description:
+      "Catalyze innovation with framework structures that enable rapid adoption of sustainable technologies",
+  },
+];
+---
+
+<!-- Why SOFT Matters -->
+<section id="why-soft-matters" class="py-12 md:py-16 lg:py-20">
+  <div class="container mx-auto max-w-3xl text-center">
+    <h1 class="mb-3 text-2xl font-semibold md:mb-4 md:text-3xl lg:text-4xl">
+      Why
+      <span class="font-bold text-primary">SOFT</span>
+      Matters
+    </h1>
+    <p class="text-xl text-primary-darker">
+      SOFT isn't just another framework—it's the catalyst for industry-wide transformation in how we
+      build, deploy, and operate software sustainably.
+    </p>
+  </div>
+</section>
+
+<!-- Industry Impact -->
+<section class="py-8 md:py-10 lg:py-12">
+  <div class="container">
+    <div class="grid grid-cols-1 gap-x-20 gap-y-12 md:gap-y-16 lg:grid-cols-2 lg:items-center">
+      <div>
+        <h1 class="mb-2 text-2xl font-semibold text-primary md:text-3xl">Industry Impact</h1>
+        <p class="text-primary-darker">
+          <span class="font-extrabold">SOFT</span> transforms how organizations approach software sustainability
+          by providing the first comprehensive, actionable framework that bridges the gap between green
+          software tools and organizational implementation. By standardizing approaches across strategy,
+          implementation, operations, and compliance, SOFT accelerates the technology sector's contribution
+          to global net-zero targets.
+          <br />
+          <br />
+          This isn't about point solutions anymore—it's about systematic transformation that creates
+          industry-wide consistency in measuring and reducing software carbon emissions.
+        </p>
+      </div>
+      <div class="flex items-center justify-center">
+        <img src="/assets/why-soft-feat-1.svg" class="shrink-0 object-cover" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Business Benefits -->
+<section class="py-8 md:py-10 lg:py-12">
+  <div class="container">
+    <div class="grid grid-cols-1 items-center gap-12 md:grid-cols-2 lg:gap-x-20">
+      <div class="order-2 md:order-1">
+        <img src="/assets/why-soft-feat-2.svg" class="object-cover" />
+      </div>
+      <div class="order-1 md:order-2">
+        <h1 class="mb-3 text-2xl font-semibold text-primary md:mb-4 md:text-3xl">
+          Business Benefits
+        </h1>
+        <div class="grid grid-cols-1 gap-x-6 gap-y-8 py-2">
+          {
+            whySoftFeatures.map((feature) => (
+              <div class="flex items-start justify-start gap-3">
+                <div class="relative flex w-16 items-center justify-center p-3">
+                  <feature.icon class="relative" />
+
+                  <WhySoftBackgroundIcon class="absolute inset-0 size-full" />
+                </div>
+                <p class="text-primary-darker">{feature.description}</p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Environmental Impact -->
+<section class="py-8 md:py-10 lg:py-12">
+  <div class="container">
+    <div class="grid grid-cols-1 gap-x-20 gap-y-12 md:gap-y-16 lg:grid-cols-2 lg:items-center">
+      <div>
+        <h1 class="mb-2 text-2xl font-semibold text-primary md:text-3xl">Environmental Impact</h1>
+        <p class="text-primary-darker">
+          <span class="font-extrabold">SOFT</span> directly reduces software-related carbon emissions
+          by embedding sustainability into every phase of the software lifecycle. Organizations implementing
+          SOFT can expect measurable reductions in energy consumption through optimized operations and
+          carbon-aware practices.
+          <br />
+          <br />
+          The framework's comprehensive approach ensures environmental considerations influence decisions
+          from strategic planning through operational execution, creating compound benefits that accelerate
+          your journey to net-zero.
+        </p>
+      </div>
+      <div class="flex items-center justify-center">
+        <img src="/assets/why-soft-feat-3.svg" class="shrink-0 object-cover" />
+      </div>
+    </div>
+  </div>
+</section>

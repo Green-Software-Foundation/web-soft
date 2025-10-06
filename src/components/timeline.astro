@@ -1,0 +1,95 @@
+---
+import clsx from "clsx";
+import TimelineTrack from "@/components/react/timeline-track";
+import CheckIcon from "@/assets/icons/check-icon.svg";
+
+const timelineItems = [
+  {
+    date: "Q1 2024",
+    description: `Proposal - Vision Defined <br/>
+      Pre-Draft - Foundation Built`,
+    icon: CheckIcon,
+    start: "2024-01-01",
+    end: "2024-03-31",
+  },
+  {
+    date: "Q2 2024",
+    description: "Draft - Community Shaped",
+    icon: CheckIcon,
+    start: "2024-04-01",
+    end: "2024-06-30",
+  },
+  {
+    date: "Jul 2025",
+    description: `Consistency Review - Excellence Refined <br/>
+      WG Final Approval - Ready for Impact <br/>
+      SC Ratification - Officially Endorsed`,
+    icon: CheckIcon,
+    start: "2025-07-01",
+    end: "2025-07-31",
+  },
+  {
+    date: "Sep 2025 - Jan 2026",
+    description: "Pilot Program - Proving the Impact",
+    start: "2025-09-01",
+    end: "2026-01-31",
+  },
+  {
+    date: "Upcoming 2026",
+    description: "Publication - Changing the World",
+    start: "2026-06-01",
+    end: "2026-12-31",
+  },
+];
+---
+
+<section class="bg-white py-12 md:py-18 lg:py-20">
+  <div class="container">
+    <h2 class="mb-6 text-center text-2xl font-semibold md:mb-8 md:text-3xl lg:text-4xl">
+      The Journey to Global Impact
+    </h2>
+    <div class="relative">
+      <TimelineTrack
+        client:load
+        count={timelineItems.length}
+        activeIndex={3}
+        segments={[
+          { start: "2024-01-01", end: "2024-03-31" },
+          { start: "2024-04-01", end: "2024-06-30" },
+          { start: "2025-07-01", end: "2025-07-31" },
+          { start: "2025-09-01", end: "2026-01-31" },
+          { start: "2026-06-01", end: "2026-12-31" },
+        ]}
+      />
+      <ol class="grid grid-cols-1 gap-6 md:grid-cols-5 md:gap-8">
+        {
+          timelineItems.map((item, index) => (
+            <li class="relative flex flex-col items-center gap-3 text-center md:gap-4">
+              <div class="relative">
+                {index === 3 && (
+                  <span class="absolute -inset-2 inline-block animate-ping rounded-full bg-primary/40" />
+                )}
+                <div
+                  data-timeline-dot
+                  class={clsx(
+                    "relative z-10 flex size-8 items-center justify-center rounded-full text-white",
+                    {
+                      "bg-accent-lighter": index === timelineItems.length - 1,
+                      "bg-primary": index !== timelineItems.length - 1,
+                    }
+                  )}
+                >
+                  {item.icon && <item.icon />}
+                </div>
+              </div>
+              <div>
+                <h3 class="mb-2 text-xl font-bold text-primary">{item.date}</h3>
+                <p set:html={item.description} class="text-sm" />
+              </div>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </div>
+</section>

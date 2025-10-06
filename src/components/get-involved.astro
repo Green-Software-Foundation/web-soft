@@ -1,0 +1,104 @@
+---
+import clsx from "clsx";
+import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import PilotProgramIcon from "@/assets/icons/pilot-program-icon.svg";
+import SubscribeIcon from "@/assets/icons/subscribe-icon.svg";
+import FeedbackIcon from "@/assets/icons/feedback-icon.svg";
+import JoinGsfIcon from "@/assets/icons/join-gsf-icon.svg";
+
+const waysToGetInvolved = [
+  {
+    url: "mailto:soft@greensoftware.foundation?subject=SOFT Pilot Program Application",
+    icon: PilotProgramIcon,
+    title: "Join the Pilot Program",
+    description: `Apply to be part of the exclusive pilot program running from September 2025 to January 2026. Shape the future of sustainable software.`,
+    buttonText: "Apply now",
+  },
+  {
+    url: "https://github.com/Green-Software-Foundation/SOFT/subscription",
+    icon: SubscribeIcon,
+    title: "Subscribe for Updates",
+    description: `Stay informed about SOFT developments, pilot results, and implementation opportunities.`,
+    buttonText: "Subscribe",
+  },
+  {
+    url: "https://github.com/Green-Software-Foundation/SOFT/issues",
+    icon: FeedbackIcon,
+    title: "Share Feedback",
+    description: `Contribute your insights and help refine SOFT for maximum impact across the industry.`,
+    buttonText: "Provide Feedback",
+  },
+
+  {
+    url: "https://greensoftware.foundation/membership",
+    icon: JoinGsfIcon,
+    title: "Join GSF",
+    description: `Become a Green Software Foundation member and help drive the global sustainability transformation.`,
+    buttonText: "Become a Member",
+  },
+];
+---
+
+<section id="resources-directory" class="py-12 md:py-18 lg:py-20">
+  <div class="relative container">
+    <div class="mb-6 md:mb-8">
+      <h2 class="mb-2 text-2xl font-semibold md:text-3xl lg:text-4xl">
+        Get Involved with <span class="font-bold text-primary"> SOFT </span>
+      </h2>
+      <p>Multiple Ways to Join the Movement</p>
+    </div>
+
+    <div class="grid grid-cols-1 gap-3 md:grid-cols-2 md:gap-4 lg:grid-cols-4">
+      {
+        waysToGetInvolved.map((way, index) => (
+          <Card
+            className={clsx("flex size-full flex-col items-center justify-between p-4", {
+              "bg-primary-darker text-white": index === 0,
+            })}
+          >
+            <div>
+              <way.icon />
+              <div
+                class={clsx("my-3 border md:my-4", {
+                  "border-greige/20": index === 0,
+                  "border-primary-lighter/20": index !== 0,
+                })}
+              />
+
+              <h2
+                class={clsx("mb-2 text-xl font-bold text-primary", {
+                  "text-white": index === 0,
+                })}
+              >
+                {way.title}
+              </h2>
+              <p>{way.description}</p>
+            </div>
+            <div class="mt-6 flex w-full items-start justify-start">
+              {index === 0 ? (
+                <Button className="w-full" variant="secondary">
+                  <a href={way.url}>{way.buttonText}</a>
+                </Button>
+              ) : (
+                <Button className="w-full">
+                  <a href={way.url}>{way.buttonText}</a>
+                </Button>
+              )}
+            </div>
+          </Card>
+        ))
+      }
+    </div>
+    <p class="mt-6 text-sm text-gray-darker">
+      For direct inquiries about SOFT: <a
+        class="underline"
+        href="mailto:soft@greensoftware.foundation">soft@greensoftware.foundation</a
+      >
+    </p>
+    <img
+      class="absolute right-0 bottom-[76%] hidden px-[5%] lg:block"
+      src="/assets/get-involved-decor.svg"
+    />
+  </div>
+</section>

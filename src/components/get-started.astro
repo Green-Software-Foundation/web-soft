@@ -1,0 +1,91 @@
+---
+import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import GithubRepoIcon from "@/assets/icons/github-repo-icon.svg";
+import DocumentationIcon from "@/assets/icons/documentation-icon.svg";
+import TemplateLibraryIcon from "@/assets/icons/template-library-icon.svg";
+import DecisionTreesIcon from "@/assets/icons/decision-trees-icon.svg";
+import MaturityMatrixIcon from "@/assets/icons/maturity-matrix-icon.svg";
+import CaseStudyIcon from "@/assets/icons/case-study-icon.svg";
+import ExternalLinkIcon from "@/assets/icons/external-link-icon.svg";
+
+const blogPosts = [
+  {
+    url: "https://github.com/Green-Software-Foundation/SOFT",
+    icon: GithubRepoIcon,
+    title: "GitHub Repository",
+    description: `Access the complete SOFT framework, documentation, and stay updated with the latest developments in sustainable software practices.`,
+    buttonText: "Explore Repository",
+  },
+  {
+    url: "https://docs.google.com/document/d/12YtwEDH2DH2do97FBXY6uO3cHUUlDAD8/",
+    icon: DocumentationIcon,
+    title: "Framework Documentation",
+    description: `Comprehensive guide to all four pillars with detailed explanations of how SOFT transforms your organization's approach to sustainability.`,
+    buttonText: "View Documentation",
+  },
+  {
+    url: "https://docs.google.com/document/d/12YtwEDH2DH2do97FBXY6uO3cHUUlDAD8/",
+    icon: TemplateLibraryIcon,
+    title: "Template Library",
+    description: `Over 100 ready-to-use templates that accelerate your sustainability transformation and ensure consistent implementation across teams.`,
+    buttonText: "Access Templates",
+  },
+
+  {
+    url: "https://miro.com/app/board/uXjVK6P7Dv0=/",
+    icon: DecisionTreesIcon,
+    title: "Interactive Decision Trees",
+    description: `Visual guides that help you navigate complex choices and find the right path for your organization's unique context and maturity level.`,
+    buttonText: "Explore Decision Trees",
+  },
+
+  {
+    url: "https://github.com/Green-Software-Foundation/green-software-maturity-matrix",
+    icon: MaturityMatrixIcon,
+    title: "Maturity Matrix Integration",
+    description: `Assess your current sustainability maturity and track progress with integrated Green Software Maturity Matrix capabilities.`,
+    buttonText: "Access Your Maturity",
+  },
+
+  {
+    url: "https://github.com/Green-Software-Foundation/SOFT/issues/new?template=case-study-template-submission.md",
+    icon: CaseStudyIcon,
+    title: "Submit Your Case Study",
+    description: `Share your SOFT implementation success story and inspire others on their sustainability journey.`,
+    buttonText: "Share Your Story",
+  },
+];
+---
+
+<section id="read-the-docs" class="relative py-12 md:py-18 lg:py-20">
+  <img class="absolute bottom-full -z-50 w-14 md:w-auto" src="/assets/get-started-decor.svg" />
+  <div class="container">
+    <h2 class="mb-6 text-center text-2xl font-semibold md:mb-8 md:text-3xl lg:text-4xl">
+      Everything You Need to Get Started
+    </h2>
+
+    <div class="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3 lg:gap-4">
+      {
+        blogPosts.map((post) => (
+          <Card className="flex size-full flex-col items-center justify-between p-6">
+            <a href={post.url}>
+              <div class="mb-2 flex flex-row items-center justify-start gap-2">
+                <post.icon />
+                <h2 class="text-xl font-bold text-primary">{post.title}</h2>
+              </div>
+              <p>{post.description}</p>
+            </a>
+
+            <div class="mt-6 flex w-full items-start justify-start">
+              <Button variant="outline" className="w-full">
+                {post.buttonText}
+                <ExternalLinkIcon />
+              </Button>
+            </div>
+          </Card>
+        ))
+      }
+    </div>
+  </div>
+</section>
