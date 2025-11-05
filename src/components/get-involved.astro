@@ -8,17 +8,18 @@ import FeedbackIcon from "@/assets/icons/feedback-icon.svg";
 import JoinGsfIcon from "@/assets/icons/join-gsf-icon.svg";
 
 const waysToGetInvolved = [
-  {
-    url: "mailto:soft@greensoftware.foundation?subject=SOFT Pilot Program Application",
-    icon: PilotProgramIcon,
-    title: "Join the Pilot Program",
-    description: `Apply to be part of the exclusive pilot program running from September 2025 to January 2026. Shape the future of sustainable software.`,
-    buttonText: "Apply now",
-  },
+  // {
+  //   url: "mailto:soft@greensoftware.foundation?subject=SOFT Pilot Program Application",
+  //   icon: PilotProgramIcon,
+  //   title: "Join the Pilot Program",
+  //   description: `Apply to be part of the exclusive pilot program running from September 2025 to January 2026. Shape the future of sustainable software.`,
+  //   buttonText: "Apply now",
+  // },
   {
     url: "https://github.com/Green-Software-Foundation/SOFT/subscription",
     icon: SubscribeIcon,
     title: "Subscribe for Updates",
+    subtitle: 'Members only',
     description: `Stay informed about SOFT developments, pilot results, and implementation opportunities.`,
     buttonText: "Subscribe",
   },
@@ -49,7 +50,7 @@ const waysToGetInvolved = [
       <p>Multiple Ways to Join the Movement</p>
     </div>
 
-    <div class="grid grid-cols-1 gap-3 md:grid-cols-2 md:gap-4 lg:grid-cols-4">
+    <div class="grid grid-cols-1 gap-3 md:grid-cols-2 md:gap-4 lg:grid-cols-3">
       {
         waysToGetInvolved.map((way, index) => (
           <Card
@@ -71,7 +72,8 @@ const waysToGetInvolved = [
                   "text-white": index === 0,
                 })}
               >
-                {way.title}
+                {way.title} <br />
+                {way.subtitle && <span class="text-sm">({way.subtitle})</span>}
               </h2>
               <p>{way.description}</p>
             </div>
