@@ -6,37 +6,37 @@ import CheckIcon from "@/assets/icons/check-icon.svg";
 const timelineItems = [
   {
     date: "Q1 2024",
-    description: `Proposal - Vision Defined <br/>
-      Pre-Draft - Foundation Built`,
+    description: `Proposal<br/>
+      Pre-Draft`,
     icon: CheckIcon,
     start: "2024-01-01",
     end: "2024-03-31",
   },
   {
     date: "Q2 2024",
-    description: "Draft - Community Shaped",
+    description: "Draft",
     icon: CheckIcon,
     start: "2024-04-01",
     end: "2024-06-30",
   },
   {
     date: "Jul 2025",
-    description: `Consistency Review - Excellence Refined <br/>
-      WG Final Approval - Ready for Impact <br/>
-      SC Ratification - Officially Endorsed`,
+    description: `Consistency Review<br/>
+      WG Final Approval<br/>
+      SC Ratification`,
     icon: CheckIcon,
     start: "2025-07-01",
     end: "2025-07-31",
   },
   {
     date: "Sep 2025 - Jan 2026",
-    description: "Pilot Program - Proving the Impact",
+    description: "Pilot Program",
     start: "2025-09-01",
     end: "2026-01-31",
   },
   {
     date: "Upcoming 2026",
-    description: "Publication - Changing the World",
+    description: "Publication",
     start: "2026-06-01",
     end: "2026-12-31",
   },
@@ -76,7 +76,7 @@ const timelineItems = [
                     {
                       "bg-accent-lighter": index === timelineItems.length - 1,
                       "bg-primary": index !== timelineItems.length - 1,
-                    }
+                    },
                   )}
                 >
                   {item.icon && <item.icon />}

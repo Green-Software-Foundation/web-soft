@@ -15,7 +15,11 @@ const NavigationComponent = () => {
     { href: "#why-soft-matters", label: "Why SOFT Matters" },
     { href: "#read-the-docs", label: "Explore the Framework" },
     { href: "#take-the-course", label: "Take the course" },
-    { href: "#resources-directory", label: "Resources Directory" },
+    { href: "#get-involved", label: "Get Involved" },
+    {
+      href: "https://directory.greensoftware.foundation/projects/sustainable-organisational-framework-for-technology-(soft)/",
+      label: "Directory",
+    },
   ];
 
   return (
@@ -26,7 +30,13 @@ const NavigationComponent = () => {
           <NavigationMenuList className="flex">
             {navigationItems.map((item) => (
               <NavigationMenuItem key={item.href}>
-                <NavigationMenuLink href={item.href} className={navigationMenuTriggerStyle()}>
+                <NavigationMenuLink
+                  href={item.href}
+                  className={navigationMenuTriggerStyle()}
+                  {...(item.href.startsWith("http")
+                    ? { target: "_blank", rel: "noopener noreferrer" }
+                    : {})}
+                >
                   {item.label}
                 </NavigationMenuLink>
               </NavigationMenuItem>
@@ -50,6 +60,9 @@ const NavigationComponent = () => {
                   key={item.href}
                   href={item.href}
                   className="px-2 py-2 text-2xl font-semibold text-primary-darker"
+                  {...(item.href.startsWith("http")
+                    ? { target: "_blank", rel: "noopener noreferrer" }
+                    : {})}
                 >
                   {item.label}
                 </a>

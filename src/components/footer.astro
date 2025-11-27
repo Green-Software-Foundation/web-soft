@@ -9,70 +9,29 @@ const footerSections = [
     title: "Project",
     links: [
       {
-        href: "#",
-        text: "Overview",
+        href: "https://github.com/Green-Software-Foundation/SOFT/issues",
+        text: "Explore the Framework",
       },
       {
-        href: "#",
-        text: "Framework Pillars",
-      },
-      // {
-      //   href: "#",
-      //   text: "Pilot Program",
-      // },
-      {
-        href: "#",
-        text: "Resources",
-      },
-      {
-        href: "#",
-        text: "Directory",
+        href: "https://directory.greensoftware.foundation/projects/sustainable-organisational-framework-for-technology-(soft)/",
+        text: "Visit the Directory",
       },
     ],
   },
   {
-    title: "Get Involved",
-    links: [
-      // {
-      //   href: "#",
-      //   text: "Join the Pilot",
-      // },
-      {
-        href: "#",
-        text: "Subscribe for Updates",
-      },
-      {
-        href: "#",
-        text: "Share Feedback",
-      },
-      // {
-      //   href: "#",
-      //   text: "Submit Case Study",
-      // },
-      {
-        href: "#",
-        text: "Become a GSF Member",
-      },
-    ],
-  },
-  {
-    title: "GSF Info",
+    title: "About the GSF",
     links: [
       {
-        href: "#",
-        text: "About",
+        href: "https://greensoftware.foundation/manifesto",
+        text: "Our Mission",
       },
       {
-        href: "#",
-        text: "Membership",
+        href: "https://greensoftware.foundation/projects",
+        text: "All Projects",
       },
       {
-        href: "#",
-        text: "Projects",
-      },
-      {
-        href: "#",
-        text: "News",
+        href: "https://greensoftware.foundation/articles",
+        text: "Blog",
       },
     ],
   },
@@ -80,16 +39,16 @@ const footerSections = [
     title: "Legal",
     links: [
       {
-        href: "https://greensoftware.foundation/policy/terms",
+        href: "https://greensoftware.foundation/policy/privacy",
         text: "Privacy Policy",
       },
       {
         href: "https://greensoftware.foundation/policy/terms",
-        text: "Terms and Conditions",
+        text: "Terms & Conditions",
       },
       {
-        href: "#",
-        text: "License: Creative Commons",
+        href: "https://creativecommons.org/licenses/by/4.0/",
+        text: "Licence: Creative Commons",
       },
     ],
   },
@@ -98,14 +57,14 @@ const footerSections = [
     type: "contact",
     socialLinks: [
       {
-        href: "https://github.com/Green-Software-Foundation",
-        icon: "github",
-        label: "GitHub",
-      },
-      {
         href: "https://www.linkedin.com/company/green-software-foundation/",
         icon: "linkedin",
         label: "LinkedIn",
+      },
+      {
+        href: "https://github.com/Green-Software-Foundation",
+        icon: "github",
+        label: "GitHub",
       },
     ],
     email: "soft@greensoftware.foundation",
@@ -121,8 +80,7 @@ const footerSections = [
       <div class="flex w-full flex-col gap-4">
         <img src="/assets/footer-logo.svg" class="w-20" />
         <p class="pt-4 text-xs font-normal text-white/50">
-          Copyright © {year} Green Software Foundation. All rights reserved.<br /><br /> Want to learn
-          implementation? Comprehensive training course coming soon
+          Copyright © {year} Green Software Foundation. All rights reserved.
         </p>
       </div>
 
@@ -143,6 +101,8 @@ const footerSections = [
                         href={social.href}
                         class="text-white/50 transition-colors hover:text-accent"
                         aria-label={social.label}
+                        target="_blank"
+                        rel="noopener noreferrer"
                       >
                         {social.icon === "linkedin" && <LinkedInIcon class="text-accent" />}
                         {social.icon === "github" && <GitHubIcon class="text-accent" />}
@@ -153,7 +113,12 @@ const footerSections = [
                 </>
               ) : (
                 section.links?.map((link) => (
-                  <a href={link.href} class="text-xs text-white/50">
+                  <a
+                    href={link.href}
+                    class="text-xs text-white/50"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     {link.text}
                   </a>
                 ))

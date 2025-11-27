@@ -2,55 +2,52 @@
 import clsx from "clsx";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import PilotProgramIcon from "@/assets/icons/pilot-program-icon.svg";
+import DirectoryIcon from "@/assets/icons/directory.svg";
 import SubscribeIcon from "@/assets/icons/subscribe-icon.svg";
 import FeedbackIcon from "@/assets/icons/feedback-icon.svg";
 import JoinGsfIcon from "@/assets/icons/join-gsf-icon.svg";
 
 const waysToGetInvolved = [
-  // {
-  //   url: "mailto:soft@greensoftware.foundation?subject=SOFT Pilot Program Application",
-  //   icon: PilotProgramIcon,
-  //   title: "Join the Pilot Program",
-  //   description: `Apply to be part of the exclusive pilot program running from September 2025 to January 2026. Shape the future of sustainable software.`,
-  //   buttonText: "Apply now",
-  // },
-  {
-    url: "https://github.com/Green-Software-Foundation/SOFT/subscription",
-    icon: SubscribeIcon,
-    title: "Subscribe for Updates",
-    subtitle: 'Members only',
-    description: `Stay informed about SOFT developments, pilot results, and implementation opportunities.`,
-    buttonText: "Subscribe",
-  },
   {
     url: "https://github.com/Green-Software-Foundation/SOFT/issues",
     icon: FeedbackIcon,
-    title: "Share Feedback",
-    description: `Contribute your insights and help refine SOFT for maximum impact across the industry.`,
-    buttonText: "Provide Feedback",
+    title: "Explore the Framework",
+    description: "Read the full documentation and share your feedback",
+    buttonText: "Visit the GitHub Issue",
   },
-
+  {
+    url: "https://greensoftware.foundation/projects/software-standards-wg",
+    icon: SubscribeIcon,
+    title: "Join the Software Standards Working Group",
+    subtitle: "Members Only",
+    description: "Collaborate with industry experts shaping this framework",
+    buttonText: "Subscribe",
+  },
+  {
+    url: "https://directory.greensoftware.foundation/projects/sustainable-organisational-framework-for-technology-(soft)/",
+    icon: DirectoryIcon,
+    title: "Visit the Directory",
+    description: "Get in touch with project leads",
+    buttonText: "Learn more",
+  },
   {
     url: "https://greensoftware.foundation/membership",
     icon: JoinGsfIcon,
-    title: "Join GSF",
-    description: `Become a Green Software Foundation member and help drive the global sustainability transformation.`,
-    buttonText: "Become a Member",
+    title: "Inquiry about becoming a GSF member",
+    description: "Reach out directly to the GSF team",
+    buttonText: "Get in touch",
   },
 ];
 ---
 
-<section id="resources-directory" class="py-12 md:py-18 lg:py-20">
+<section id="get-involved" class="py-12 md:py-18 lg:py-20">
   <div class="relative container">
     <div class="mb-6 md:mb-8">
-      <h2 class="mb-2 text-2xl font-semibold md:text-3xl lg:text-4xl">
-        Get Involved with <span class="font-bold text-primary"> SOFT </span>
-      </h2>
+      <h2 class="mb-2 text-2xl font-semibold md:text-3xl lg:text-4xl">Get Involved</h2>
       <p>Multiple Ways to Join the Movement</p>
     </div>
 
-    <div class="grid grid-cols-1 gap-3 md:grid-cols-2 md:gap-4 lg:grid-cols-3">
+    <div class="grid grid-cols-1 gap-3 md:grid-cols-2 md:gap-4 lg:grid-cols-4">
       {
         waysToGetInvolved.map((way, index) => (
           <Card
@@ -58,8 +55,8 @@ const waysToGetInvolved = [
               "bg-primary-darker text-white": index === 0,
             })}
           >
-            <div>
-              <way.icon />
+            <div class="w-full">
+              <way.icon class="size-8" />
               <div
                 class={clsx("my-3 border md:my-4", {
                   "border-greige/20": index === 0,
@@ -80,11 +77,15 @@ const waysToGetInvolved = [
             <div class="mt-6 flex w-full items-start justify-start">
               {index === 0 ? (
                 <Button className="w-full" variant="secondary">
-                  <a href={way.url}>{way.buttonText}</a>
+                  <a href={way.url} target="_blank" rel="noopener noreferrer">
+                    {way.buttonText}
+                  </a>
                 </Button>
               ) : (
                 <Button className="w-full">
-                  <a href={way.url}>{way.buttonText}</a>
+                  <a href={way.url} target="_blank" rel="noopener noreferrer">
+                    {way.buttonText}
+                  </a>
                 </Button>
               )}
             </div>
@@ -92,12 +93,6 @@ const waysToGetInvolved = [
         ))
       }
     </div>
-    <p class="mt-6 text-sm text-gray-darker">
-      For direct inquiries about SOFT: <a
-        class="underline"
-        href="mailto:soft@greensoftware.foundation">soft@greensoftware.foundation</a
-      >
-    </p>
     <img
       class="absolute right-0 bottom-[76%] hidden px-[5%] lg:block"
       src="/assets/get-involved-decor.svg"
